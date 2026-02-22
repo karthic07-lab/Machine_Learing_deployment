@@ -4,6 +4,16 @@ import joblib
 # Initialize a Flask application instance
 app = Flask(__name__)
 
+# Export the trained model
+model_filename = 'logistic_regression_model.joblib'
+joblib.dump(model, model_filename)
+
+print(f"Model successfully exported to {model_filename}")
+
+# Save the StandardScaler objectscaler_filename = 'standard_scaler.joblib'joblib.dump(scaler, scaler_filename)print(f"StandardScaler successfully exported to {scaler_filename}")
+
+ StandardScaler successfully exported to standard_scaler.joblib
+
 # Load the trained model and scaler
 try:
     model = joblib.load('logistic_regression_model.joblib')
